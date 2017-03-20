@@ -1,0 +1,65 @@
+
+
+<iframe name = "status" width = "30%" height = "30px" style = "border: none;">
+</iframe>
+
+
+
+<table style = "width: 100%; margin-left: -2px;">
+
+	<tr>
+		<td>
+			<div style = "width: 100%; background: #dddddd;" class = "thin_up">
+				<br>
+				<a class = "head_panel" id = "head_panel" style = "margin-left: 20px; font-family: arial;">Загрузить товар</a>
+				<br><br>
+
+				<form method = "POST" enctype = "multipart/form-data" action = "../config/insert_base.php" target = "status">
+				<table style = "margin-left: 20px; width: 96%;" class = "thin_down">
+					<tr style = "vertical-align: top;">
+						<td class = "thin_up" style = "padding: 10px;">
+							<p class = "text_panel">Выберите изображение до 2Mb</p>
+							<input type = "file" name = "load_img" id = "load_img" class = "text_panel" /> <br><br>
+						</td>
+						<td class = "thin_up" style = "padding: 10px;">
+							<p class = "text_panel">Наименование</p>
+							<input name = "name_tovar" id = "name_tovar" type = "text" cols = "30"  class = "brd_down" style = "outline: none; width: 90%;" onclick = "this.value = ''" />
+						</td>
+						<td class = "thin_up" style = "padding: 10px;">	
+							<p class = "text_panel">Вес упаковки кг</p>
+							<input name = "weight" id = "weight" type = "text" cols = "30"  class = "brd_down" style = "outline: none; width: 90%;" onclick = "this.value = ''" />
+						</td>
+						<td class = "thin_up" style = "padding: 10px;">	
+							<p class = "text_panel">Срок хранения суток</p>
+							<input name = "timelimit" id = "timelimit" type = "text" cols = "30"  class = "brd_down" style = "outline: none; width: 90%;" onclick = "this.value = ''" />	
+						</td>
+						<td class = "thin_up" style = "padding: 10px;">
+							<p class = "text_panel">
+								<input type = "checkbox" name = "newprod" id = "newprod" class = "thin_down" />Новинка
+							</p>
+							
+							<p class = "text_panel">
+								<input type = "checkbox" name = "action" id = "action" class = "thin_down" /> Акция
+							</p>
+						</td>
+					</tr>
+				</table>
+				
+						<div style = "margin-left: 20px; width: 96%; position: relative; height: 50px; margin-top: 5px;" >
+							<div class = "thin_down">
+								<input  type = "button" value = "выход"  class = "base_button" onclick = "close_load_tovar()" style = "float: right; margin-top: 5px;" />
+								<input  type = "submit" value = "добавить" class = "base_button" name = "load_pastry" action = "" style = "float: right; margin-top: 5px;" /> 
+							</div>
+						</div>
+
+				
+				</form>
+
+			</div>
+		</td>
+	</tr>
+
+</table>
+
+
+

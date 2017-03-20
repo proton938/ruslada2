@@ -1,0 +1,38 @@
+<iframe name = "status" width = "100%" height = "30px" style = "border: none;">
+</iframe>
+
+<table style = "width: 100%; margin-left: -2px;">
+
+	<tr>
+		<td>
+			<div style = "width: 100%; background: #dddddd;" class = "thin_up">
+				<br>
+				<a class = "head_panel" style = "margin-left: 20px; font-family: arial;">Создать раздел продукции</a>
+				<br><br>
+
+				<form method = "POST" enctype = "multipart/form-data" action = "../config/create_base.php" target = "status">
+				<table style = "margin-left: 20px; width: 55%;" class = "thin_down">
+					<tr style = "vertical-align: bottom;">
+						<td class = "thin_up" style = "padding: 10px;">
+							<p class = "text_panel">Выберите заставку раздела</p>
+							<input type = "file" name = "load_img" id = "load_img" class = "text_panel" /> <br><br>
+						</td>
+						<td class = "thin_up" style = "padding: 10px;">
+							<p class = "text_panel">Наименование продукции</p>
+							<input name = "name_product" id = "name_product" type = "text" cols = "30"  class = "brd_down" style = "outline: none; width: 90%;" onclick = "this.value = ''" />
+						</td>
+								
+					</tr>
+				</table>
+				
+				<input  type = "button" value = "" style = "width: 10px; opacity: 0; float: right;" />
+				<input  type = "button" value = "выход"  class = "base_button" onclick = "close_section_products()" style = "float: right; margin-top: -30px;" />
+				<input  type = "submit" value = "создать раздел компании" class = "base_button" name = "create_section_product" action = "" style = "float: right; margin-top: -30px;" /> 
+				
+				</form>
+
+			</div>
+		</td>
+	</tr>
+
+</table>

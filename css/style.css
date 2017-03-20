@@ -1,0 +1,39 @@
+
+body
+		{
+		}
+	
+	
+.blank
+		{
+			 box-shadow: 0 0 50px rgba(0, 0, 0, 0.2); 
+			 width: 63%; 
+			 position: relative; 
+			 z-index: 0;
+		}
+.blank:hover
+		{
+			z-index: 5;
+		}
+		
+		/* border-bottom: dotted 5px #F7A30A; - для дальнейшего использования */
+		
+a 
+	{
+		font-size: 20px;
+	}
+
+a:hover 
+	{
+		color: red;
+	}
+	
+.slide
+	{
+		position: absolute;
+		top: 0px;
+		left: 25%; 
+		margin-top: 2.5%; 
+		-webkit-transition:all 3s ease-in-out;
+		transition: 1s;
+	}

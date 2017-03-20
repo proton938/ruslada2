@@ -1,0 +1,63 @@
+
+<center>
+
+<iframe name = "status" width = "30%" height = "30px" style = "border: none;">
+</iframe>
+
+<table style = "width: 100%; margin-left: -2px;">
+
+	<tr>
+		<td>
+			<div style = "width: 100%; background: #dddddd;" class = "thin_up">
+				<br>
+				<a class = "head_panel" style = "margin-left: 20px; font-size: 20px; font-family: arial;"><strong>Загрузить товар</strong></a>
+				<br><br><br>
+
+				<form method = "POST" enctype = "multipart/form-data" action = "../config/insert_base.php" target = "status">
+				<table style = "margin-left: 20px;">
+					<tr>
+						<td>
+							<p class = "head_panel"><strong>Выберите изображение до 2Mb </strong></p>
+							<input type = "file" name = "load_img" id = "load_img" class = "text_panel" /> <br><br>
+						
+							<p class = "text_panel"><strong>Наименование</strong></p>
+							<input name = "name_tovar" id = "name_tovar" type = "text" cols = "30"  class = "name_logo" onclick = "this.value = ''" />
+							
+							<p class = "text_panel"><strong>Вес упаковки кг</strong></p>
+							<input name = "weight" id = "weight" type = "text" cols = "30"  class = "name_logo" onclick = "this.value = ''" />
+							
+							<p class = "text_panel"><strong>Срок хранения суток</strong></p>
+							<input name = "timelimit" id = "timelimit" type = "text" cols = "30"  class = "name_logo" onclick = "this.value = ''" />
+							
+							<br><br>
+							
+							<p class = "text_panel">
+								<input type = "checkbox" name = "newprod" id = "newprod" class = "name_logo" /> <strong>Новинка</strong>
+							</p>
+							
+							<p class = "text_panel">
+								<input type = "checkbox" name = "action" id = "action" class = "name_logo" /> <strong>Акция</strong>
+							</p>
+							
+							<br>
+							
+							<div class = "thin_up" style = "width: 80%;">
+								<center>
+								<input type = "submit" value = "ДОБАВИТЬ" class = "base_button" name = "load_pastry" action = "" /> 
+								<input type = "button" value = "ВЫХОД" style = "align: right;"  class = "base_button" onclick = "close_panel()">
+								</center>
+							</div>
+						</td>
+					</tr>
+				</table>				
+				</form>
+
+			</div>
+		</td>
+	</tr>
+
+</table>
+
+</center>
+
+
