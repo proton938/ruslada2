@@ -106,18 +106,65 @@
 
 
 
+		
+		
+		
+		
 
 
 
-		function read_base()													/* считываем базу */
+		function read_base()																/* считываем базу - элементы управления */
 			{
-				$('#products').load('../config/read_base.php');
 				read_section_products();
+				read_company();
+				read_company_active();
 			}
+			
+		function read_base_2()																/* считываем базу - продукция */
+			{
+				var name_company = document.getElementById('name_company_active').value;
+				
+				var navigate_company = document.getElementById("navigation_chain_comp").innerHTML;
+				var cnt = navigate_company.length - 2;
+				navigate_company = navigate_company.substr(0, cnt);
+				
+				if (name_company != navigate_company)
+					{
+						var name_product = document.getElementById('name_product').value;
+						if (name_company != '')
+							{
+								document.getElementById("navigation_chain_comp").innerHTML = name_company + "/";
+								$('#products').load('../config/read_base.php', "name_product="+name_product+"&name_company="+name_company);
+							}
+					}
+			}
+			
+			
+			
+			
 		
 		function read_section_products()													/* считываем список продукции */
 			{
 				$('#section_products').load('../config/read_section_products.php');
+			}
+			
+		function read_company()																/* считываем выбор компании */
+			{
+				$('#company').load('../config/read_company.php');
+			}
+		
+		function read_company_active()																/* считываем компании включенные в раздел продукции  */
+			{
+				var name_product_active = document.getElementById('name_product').value; 
+				
+				var navigate_product = document.getElementById("navigation_chain_prod").innerHTML;
+				var cnt = navigate_product.length - 2;
+				navigate_product = navigate_product.substr(0, cnt);
+				
+				if (name_product_active != navigate_product)
+					{
+						$('#section_creator').load('../config/read_company_active.php', "name_product_active="+name_product_active);
+					}
 			}
 
 		
@@ -145,9 +192,19 @@
 		function close_load_tovar()													/* закрываем панель для загрузки товара */
 			{
 				$('#open_panel').load('../load/dummy.txt');
-				read_base();
-				document.getElementById('prod_fon').style.top = '200px';
+				read_base_2();
+				document.getElementById('prod_fon').style.top = '250px';
 				buttons_down();
+			}
+			
+			
+		function copy_product_company()
+			{
+				var copy_name_product = document.getElementById('name_product').value;
+				document.getElementById('copy_name_product').value = copy_name_product;	
+				
+				var name_company = document.getElementById('name_company').value;
+				document.getElementById('copy_name_company').value = name_company;
 			}
 			
 			
@@ -158,7 +215,7 @@
 		function section_creator()													/* открываем панель создания раздела производителя */
 			{
 				$('#open_panel').load('section_creator.html');
-				document.getElementById('prod_fon').style.top = '440px';
+				document.getElementById('prod_fon').style.top = '480px';
 				buttons_down();
 				document.getElementById('button_section_creator').className = 'base_button_down';
 			}
@@ -166,8 +223,9 @@
 		function close_section_creator()													/* закрываем панель создания раздела производителя */
 			{
 				$('#open_panel').load('../load/dummy.txt');
-				read_base();
-				document.getElementById('prod_fon').style.top = '200px';
+				read_base_2();
+				read_company();
+				document.getElementById('prod_fon').style.top = '250px';
 				buttons_down();
 			}
 			
@@ -179,7 +237,7 @@
 		function section_products()													/* открываем панель создания раздела производителя */
 			{
 				$('#open_panel').load('section_products.html');
-				document.getElementById('prod_fon').style.top = '440px';
+				document.getElementById('prod_fon').style.top = '480px';
 				buttons_down();
 				document.getElementById('button_section_products').className = 'base_button_down';
 			}
@@ -187,8 +245,9 @@
 		function close_section_products()													/* закрываем панель создания раздела производителя */
 			{
 				$('#open_panel').load('../load/dummy.txt');
-				read_base();
-				document.getElementById('prod_fon').style.top = '200px';
+				read_base_2();
+				read_section_products();
+				document.getElementById('prod_fon').style.top = '250px';
 				buttons_down();
 			}
 

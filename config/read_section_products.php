@@ -13,6 +13,8 @@ $count_section = count($readbuf);
 
 $id_prod = 0;
 
+
+
 echo '<table style = "width: 100%;">';
 
 foreach ($readbuf as $mass)
@@ -22,16 +24,6 @@ foreach ($readbuf as $mass)
 		
 		echo '	<script>
 		
-					function prod_screen_down_'.$id_prod.'()
-						{
-							document.getElementById("prod_screen_'.$id_prod.'").style.opacity = "0.5";
-						}
-						
-					function prod_screen_up_'.$id_prod.'()
-						{
-							document.getElementById("prod_screen_'.$id_prod.'").style.opacity = "1";
-						}
-						
 					function product_button_down_'.$id_prod.'()
 						{
 							for (x = 1; x <= '.$count_section.'; x++)
@@ -41,7 +33,10 @@ foreach ($readbuf as $mass)
 								}
 							document.getElementById("product_button'.$id_prod.'").className = "product_button_down"; 
 							document.getElementById("prod_screen_'.$id_prod.'").style.opacity = "0.5";
-							document.getElementById("navigation_chain").innerHTML = "'.$mass['name_section'].'" + "/";
+							document.getElementById("navigation_chain_prod").innerHTML = "'.$mass['name_section'].'" + "/";
+							document.getElementById("name_product").value = "'.$mass['name_section'].'";
+							read_base_2();
+							read_company_active();
 						}
 						
 				</script>
@@ -73,3 +68,5 @@ foreach ($readbuf as $mass)
 	}
 	
 echo '</table>';
+
+?>

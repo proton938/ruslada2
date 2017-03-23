@@ -8,15 +8,33 @@
 		echo $company;
 		
 		 $db = new PDO('sqlite:'.dirname(__FILE__).DIRECTORY_SEPARATOR.'base.db');
+		 
+		 if (is_uploaded_file($_FILES['load_img'] ['tmp_name']))                  // если изображение выбрано ...
+
+		{	
+		 $path = '../images/';									
+		 $ship_img = $path.basename($_FILES['load_img'] ['name']);
+		 
+			
+		 // загружаем фото товара	
+		 
+		 move_uploaded_file($_FILES['load_img'] ['tmp_name'], $ship_img);
+		 
+		 }
+		 
  
 		$db->query('INSERT INTO company (  	image, 
 											name_company)
 														VALUES
 															(
-																"",
+																"'.$ship_img.'",
 																"'.$company.'"
 															)');
 	}
+	
+	
+	
+	
 	
 
  if (isset($_POST['create_section_product']))                                                // создаем раздел продукции
@@ -39,7 +57,7 @@
 		$product = $_POST['name_product'];
 		echo $product;
 			
-		$db->query('CREATE TABLE '.$product.' (	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
+		$db->query('CREATE TABLE '.$product.' (	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,      
 												name_product,
 												name_company,
 												image, 
@@ -62,6 +80,8 @@
 	}
 	
 	
+
+	
 	
 $db = new PDO('sqlite:'.dirname(__FILE__).DIRECTORY_SEPARATOR.'base.db'); 
  
@@ -71,10 +91,13 @@ $db->query('CREATE TABLE section_products (id INTEGER NOT NULL PRIMARY KEY AUTOI
 											name_section
 											)');
 											
+											
+											
 $db->query('CREATE TABLE company ( 	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
 									image, 
 									name_company
 									)');
+									
  
 
 /**
