@@ -67,6 +67,8 @@ foreach ($readbuf as $mass)
 											document.getElementById("company_button'.$id_company.'").className = "product_button_down"; 
 											document.getElementById("company_screen_'.$id_company.'").style.opacity = "0.5";
 											document.getElementById("name_company_active").value = "'.$mass['name_company'].'";
+											var sel = document.getElementById("name_company");
+											sel.value = "'.$mass['name_company'].'";
 											read_base_2();
 										}
 										

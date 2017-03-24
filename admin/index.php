@@ -11,8 +11,8 @@
 
 
 
-
 <body style = "background: url('../images/for_admin/fon.jpg');" onload = "read_base()">
+
 	
 	<form method = "POST" enctype = "multipart/form-data" action = "../config/create_base.php" target = "create_base">
 		<input id = "name_product" name = "name_product" type = "text" value = "" style = "position: relative; z-index: 6;"><br>
