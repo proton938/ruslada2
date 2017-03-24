@@ -1,3 +1,5 @@
+
+
 	var t;																			/* верхний слайдер */
 	var step = 0;
 	function move_slide()
@@ -58,12 +60,10 @@
 	
 	
 
-	
-
 
 	function load_general_catalog()																/* генеральная страница каталога */
 			{
-				$('#catalog').load('../load/general_catalog.html');
+				$('#catalog').load('../load/read_section_products_for_user.php');
 				$('#navigation_logo_creator').load('../load/dummy.txt');
 				document.getElementById('navigation_produkciya').innerHTML = '';
 				setTimeout('baner_opacity()', 4000);
@@ -184,7 +184,7 @@
 		function load_tovar()													/* открываем панель для загрузки товара */
 			{
 				$('#open_panel').load('load_image.html');
-				document.getElementById('prod_fon').style.top = '480px';
+				document.getElementById('prod_fon').style.top = '520px';
 				buttons_down();
 				document.getElementById('button_load_tovar').className = 'base_button_down';
 			}	
@@ -195,6 +195,7 @@
 				read_base_2();
 				document.getElementById('prod_fon').style.top = '250px';
 				buttons_down();
+				read_company_active();
 			}
 			
 			

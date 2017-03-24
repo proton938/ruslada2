@@ -7,7 +7,6 @@ $db = new PDO('sqlite:'.dirname(__FILE__).DIRECTORY_SEPARATOR.'base.db');
 $buf = $db->query('SELECT * FROM section_products');
 $readbuf = $buf->fetchAll();
 
-echo count($readbuf);
 
 $count_section = count($readbuf);
 

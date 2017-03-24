@@ -4,8 +4,6 @@ if (isset($_REQUEST['name_product'])) { $name_product = $_REQUEST['name_product'
 
 if (isset($_REQUEST['name_company'])) { $name_company = $_REQUEST['name_company'];}  // считываем название производителя	                            		
   
-echo $name_product.'<br>';
-echo $name_company.'<br><br>';
 
 if ($name_company != '')
 
@@ -24,7 +22,6 @@ if ($name_company != '')
 
 				foreach ($readbuf as $mass)											
 					{
-						echo $mass['name_company'].'<br>';
 						
 						/** 	сверяем имя компании, прописанной в атрибутах товара с выбранным в панели производителем
 								если значения совпадают выводим товар в браузер, чтобы на экране были товары только выбранного производителя  	**/

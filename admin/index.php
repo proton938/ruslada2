@@ -16,7 +16,7 @@
 	
 	<form method = "POST" enctype = "multipart/form-data" action = "../config/create_base.php" target = "create_base">
 		<input id = "name_product" name = "name_product" type = "text" value = "" style = "position: relative; z-index: 6;"><br>
-		<input id = "name_company_active" name = "name_product_active" type = "text" value = "" style = "position: relative; z-index: 6;"><br>
+		<input id = "name_company_active" name = "name_company_active" type = "text" value = "" style = "position: relative; z-index: 6;"><br>
 		<input type = "submit" style = "position: absolute; z-index: 5;" value = "-" />
 	</form>
 	

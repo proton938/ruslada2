@@ -100,16 +100,6 @@ $db->query('CREATE TABLE company ( 	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMEN
 									
  
 
-/**
- 
- $db->query('CREATE TABLE pastry (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
-									image, 
-									name_tovar,                                    
-									weight, 
-									timelimit,
-									newprod,
-									action,
-									)');     **/
 									
 ?>
 									

@@ -1,6 +1,6 @@
 
 
-<iframe name = "status" width = "100%" height = "300px" style = "border: none;">
+<iframe name = "status" width = "100%" height = "30px" style = "border: none;">
 </iframe>
 
 <script>
@@ -24,8 +24,10 @@
 							<input type = "file" name = "load_img" id = "load_img" class = "text_panel" /> <br><br>
 						</td>
 						<td class = "thin_up" style = "padding: 10px;">
-							<input id = "copy_name_product" name = "copy_name_product" type = "text" value = "" style = "position: relative; z-index: 6;">
-							<input id = "copy_name_company" name = "copy_name_company" type = "text" value = "" style = "position: relative; z-index: 6;">
+						
+							<input id = "copy_name_product" name = "copy_name_product" type = "hidden" value = "" style = "position: relative; z-index: 6;"> 			<!-- скрытые для передачи имени раздела продукции  -->
+							<input id = "copy_name_company" name = "copy_name_company" type = "hidden" value = "" style = "position: relative; z-index: 6;">			<!-- скрытые для передачи имени производителя  -->
+							
 							<p class = "text_panel">Наименование</p>
 							<input name = "name_tovar" id = "name_tovar" type = "text" cols = "30"  class = "brd_down" style = "outline: none; width: 90%;" onclick = "this.value = ''" />
 						</td>
