@@ -1,4 +1,4 @@
-
+<!-- <div style = "width: 100px; height: 100px; background: red;"></div> -->
 
 <?php
 					
@@ -9,12 +9,47 @@ $readbuf = $buf->fetchAll();
  
 $j = 0;
 
-echo '<table style = "width: 100%">';
+// открываем процедуру выравнивания таблицы
+$cnt = count($readbuf);					
+				
+if ($cnt == 1)
+	{
+		echo '<table style = "width: 25%">';
+	}
+if ($cnt == 2)
+	{
+		echo '<table style = "width: 50%">';
+	}
+if ($cnt == 3)
+	{
+		echo '<table style = "width: 75%">';
+	}
+if ($cnt > 3)
+	{
+		echo '<table style = "width: 100%">';
+	}
+// закрываем процедуру выравнивания таблицы
+
 
 foreach ($readbuf as $mass)											
 	{		
 		$image = substr($mass['image'], 0);
 		$j++;
+		
+		echo '<script>
+				function read_company_active_for_user_'.$mass['id'].'()													
+					{
+						var name_section = "'.$mass['name_section'].'";
+						$("#catalog").load("../config/read_company_active_for_user.php", "name_section="+name_section);
+						document.getElementById("navigation_produkciya").innerHTML = "";
+					}
+					
+				function back_to_page_'.$mass['id'].'()													
+					{
+						read_company_active_for_user_'.$mass['id'].'();	
+						document.getElementById("navigation_logo_creator").innerHTML = "<a onclick = \' read_company_active_for_user_'.$mass['id'].'() \'> '.$mass['name_section'].' /</a>";
+					}
+			  </script>';
 		
 		if ($j == 1)
 			{
@@ -23,10 +58,10 @@ foreach ($readbuf as $mass)
 			
 			echo '<td style = "position: relative; vertical-align: top; width: 25%;">
 					<img src = "../images/kuadrat.png" style =  "position: relative; width: 100%;">
-					<img style = "position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;" 
+					<img style = "position: absolute; left: 10%; top: 10%; width: 80%; height: 80%;" 
 					onmouseover = "this.style.opacity = \'0.5\'"
 					onmouseout = "this.style.opacity = \'1.0\'"
-					onclick = "";
+					onclick = "back_to_page_'.$mass['id'].'()";
 					src = "';
 			
 			if ($image != '')                             // если ячейка изображения не пустая - выводим содержимое

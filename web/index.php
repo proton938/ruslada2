@@ -43,7 +43,7 @@
 					О КОМПАНИИ
 				</div>
 				<br>
-				<div style = "width: 95%; border: double 3px #DAA520; padding-top: 20px; padding-bottom: 20px;">
+				<div style = "width: 95%; padding-top: 10px; padding-bottom: 20px;">
 					<table style = "width: 90%">
 						<tr>
 							<td>
@@ -87,7 +87,7 @@
 				</div>
 			</div>
 			
-			<div 	class = "blank" style = "background: #ffffff; padding-top: 20px; padding-bottom: 20px;" >   						<!--блок о каталог продукции-->
+			<div 	class = "blank" style = "background: #ffffff; padding-top: 40px; padding-bottom: 20px;" >   						<!--блок о каталог продукции-->
 				<div class = "header_block">
 					КАТАЛОГ ПРОДУКЦИИ
 				</div>
@@ -108,18 +108,18 @@
 					</tr>
 				</table>
 				<br>
-				<div id = "catalog" style = "width: 95%; border: double 3px #DAA520; padding-top: 20px; padding-bottom: 20px;">         <!--изменяемый контент каталога-->
+				<div id = "catalog" style = "width: 95%;  padding-top: 0px; padding-bottom: 20px;">         <!--изменяемый контент каталога-->
 					
 				</div>
 			</div>
 			
 			
-			<div 	class = "blank" style = "background: #ffffff; padding-top: 20px; padding-bottom: 20px;" >   						<!--блок о компании-->
+			<div 	class = "blank" style = "background: #ffffff; padding-top: 40px; padding-bottom: 20px;" >   						<!--блок о компании-->
 				<div class = "header_block">
 					НОВОСТИ
 				</div>
 				<br>
-				<div style = "width: 95%; border: double 3px #DAA520; padding-top: 20px; padding-bottom: 20px;">
+				<div style = "width: 95%; padding-top: 20px; padding-bottom: 20px;">
 					<table style = "width: 90%">
 						<tr>
 							<td>

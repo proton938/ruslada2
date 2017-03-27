@@ -63,15 +63,22 @@
 
 	function load_general_catalog()																/* генеральная страница каталога */
 			{
-				$('#catalog').load('../load/read_section_products_for_user.php');
+				$('#catalog').load('../config/read_section_products_for_user.php');
 				$('#navigation_logo_creator').load('../load/dummy.txt');
 				document.getElementById('navigation_produkciya').innerHTML = '';
-				setTimeout('baner_opacity()', 4000);
+			}
+			
+		function read_company_active_for_user()													/* список производителей, задействованных в производстве данного вида продукции */
+			{
+				$('#catalog').load('../config/read_company_active_for_user.php');
+				document.getElementById('navigation_produkciya').innerHTML = '<a onmouseover = "this.style.cursor = \'pointer\'">производитель</a>';
 			}
 			
 			
-			
-		
+
+
+
+			/**---------------------------------------**/
 
 	function load_pastry()
 			{
@@ -102,6 +109,11 @@
 				$('#navigation_logo_creator').load('../load/navigation_konfet.html');
 				document.getElementById('navigation_produkciya').innerHTML = '';
 			}
+			
+			
+			
+			/**---------------------------------------**/
+
 		
 
 

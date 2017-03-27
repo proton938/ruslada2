@@ -15,10 +15,40 @@ if ($name_company != '')
 				 
 				$buf = $db->query('SELECT * FROM '.$name_product);
 				$readbuf = $buf->fetchAll();
+				
+				
+				
+				// открываем процедуру выравнивания таблицы
+				$cnt = 0;
+				
+				foreach ($readbuf as $mass)	
+					{
+						if ($name_company == $mass['name_company'])    					
+							{
+								$cnt++;
+							}
+					}					
+				
+				if ($cnt == 1)
+					{
+						echo '<table style = "width: 25%">';
+					}
+				if ($cnt == 2)
+					{
+						echo '<table style = "width: 50%">';
+					}
+				if ($cnt == 3)
+					{
+						echo '<table style = "width: 75%">';
+					}
+				if ($cnt > 3)
+					{
+						echo '<table style = "width: 100%">';
+					}
+				// закрываем процедуру выравнивания таблицы
+				
 				 
 				$j = 0;
-
-				echo '<table>';
 
 				foreach ($readbuf as $mass)											
 					{
@@ -32,12 +62,13 @@ if ($name_company != '')
 								$j++;
 								if ($j == 1)
 									{
-										echo '<tr>';
+										echo '<tr style = "vertical-align: top;">';
 									}
 									
-									echo '<td style = "vertical-align: top;">
+									echo '<td style = "position: relative; vertical-align: top; width: 25%;">
 											<div class = "tovar" style = "width: 100%;">
-											<img width = "100%" src = "';
+											<img src = "../images/rectangle.png" style =  "position: relative; width: 100%;">
+											<img style = "position: absolute; top: 0px; left: 0px; width: 100%;" src = "';
 									
 									if ($image != '')                             // если ячейка изображения не пустая - выводим содержимое
 										{
@@ -53,16 +84,15 @@ if ($name_company != '')
 												onmouseout = "this.style.opacity = \'1\'"
 												onclick = "in_tovar'.$mass['id'].'()"
 												style = "border-bottom: solid 2px #dddddd;">
-											<a class = "name_tovar">
-												Печенье: '.$mass['name_tovar'].'
-											</a>
-											<br>
-											<a>
+											<p class = "name_tovar">
+												'.$mass['name_tovar'].'
+											</p>
+											<p>
 												Вес упаковки: '.$mass['weight'].' кг <br>
 												Срок годности: '.$mass['timelimit'].' суток          <br><br>
-											</a>
+											</p>
 											
-											<a>
+											<p>
 												';
 											if ($mass['newprod'] == 'on')
 												{
@@ -73,7 +103,7 @@ if ($name_company != '')
 													echo 'Акция<br>';
 												}
 												
-									echo	'</a>
+									echo	'</p>
 											
 											<br>
 											</div>
